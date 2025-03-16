@@ -4,7 +4,7 @@ import { PostType } from './post.interface';
 
 @Controller('posts')
 export class PostsController {
-  constructor(private readonly postsService: PostsService) {} 
+  constructor(private readonly postsService: PostsService) {}
 
   @Get()
   findAll() {
