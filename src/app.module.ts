@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { PostsModule } from './posts/posts.module';
 
 // アプリケーションのルートモジュールを定義します
-//  どこで宣言されているコントローラ・サービスを使うのかを定義する
+// どこで宣言されているコントローラ・サービスを使うのかを定義する
 @Module({
   imports: [PostsModule],
   controllers: [AppController],

@@ -6,6 +6,9 @@ import { PostType } from './post.interface';
 export class PostsController {
   constructor(private readonly postsService: PostsService) {}
 
+  // ハンドラーメソッドとよばれる
+  // エンドポイント（/posts）に対しGETやPOSTといったリクエストが来たら、
+  // それぞれ対応するServiceで宣言され、関数化されているロジックを呼び出す
   @Get()
   findAll() {
     return this.postsService.findAll();
