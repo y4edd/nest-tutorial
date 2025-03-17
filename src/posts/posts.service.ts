@@ -14,4 +14,12 @@ export class PostsService {
   create(post: PostType) {
     this.posts.push(post);
   }
+
+  findById(id: string): PostType {
+    const post = this.posts.find((post) => post.id === id);
+    if (!post) {
+      throw new Error(`Post with id ${id} not found`);
+    }
+    return post;
+  }
 }

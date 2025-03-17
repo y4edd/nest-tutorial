@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { PostsService } from './posts.service';
 import { PostType } from './post.interface';
 
@@ -14,5 +14,11 @@ export class PostsController {
   @Post()
   create(@Body() post: PostType): void {
     this.postsService.create(post);
+  }
+
+  // パラメター。対応させるように
+  @Get(':id')
+  findById(@Param('id') id: string): PostType {
+    return this.postsService.findById(id);
   }
 }
